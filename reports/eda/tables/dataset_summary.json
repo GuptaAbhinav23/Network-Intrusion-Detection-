@@ -1,0 +1,11 @@
+{
+    "Rows": 2522362,
+    "Columns": 46,
+    "Features": 45,
+    "Numerical Features": 46,
+    "Categorical Features": 0,
+    "Memory Usage (MB)": 885.23,
+    "Duplicate Rows": 290415,
+    "Missing Values": 3128,
+    "Label Classes": 15
+}
