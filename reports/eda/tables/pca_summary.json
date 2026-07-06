@@ -1,0 +1,9 @@
+{
+    "Total Samples": 10000,
+    "Original Features": 45,
+    "Principal Components": 45,
+    "Variance (PC1)": 0.4517213760782949,
+    "Variance (PC2)": 0.11180386507647719,
+    "Variance (PC3)": 0.0878206868699474,
+    "Variance First 10": 0.8902308272983559
+}
