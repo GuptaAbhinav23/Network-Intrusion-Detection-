@@ -1,13 +1,14 @@
 import numpy as np
+import os
 from .config import DATASET_DIR
 
 def load_train_test_data():
 
-    X_train = np.load(DATASET_DIR,"X_train.npy")
-    X_test = np.load(DATASET_DIR,"X_test.npy")
+    X_train = np.load(os.path.join(DATASET_DIR,"X_train.npy"))
+    X_test = np.load(os.path.join(DATASET_DIR,"X_test.npy"))
 
-    y_train = np.load(DATASET_DIR,"y_train.npy")
-    y_test = np.load(DATASET_DIR,"y_test.npy")
+    y_train = np.load(os.path.join(DATASET_DIR,"y_train.npy"))
+    y_test = np.load(os.path.join(DATASET_DIR,"y_test.npy"))
 
     print("="*70)
     print("TRAIN / TEST DATA LOADED")

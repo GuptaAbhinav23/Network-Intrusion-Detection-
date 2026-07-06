@@ -4,8 +4,9 @@ from ..core import (
     load_train_test_data,
     evaluate_model,
     save_model,
+    generate_report,
     Logger,
-    Timer,
+    Timer
 )
 
 def logistic_regression_model(MAX_ITER, RANDOM_STATE, N_JOBS):
@@ -37,10 +38,10 @@ def logistic_regression_model(MAX_ITER, RANDOM_STATE, N_JOBS):
 
     Logger.info("Evaluating Model...")
 
-    results = evaluate_model(
-        model,
-        X_test,
-        y_test,
+    evaluation = evaluate_model(
+        model=model,
+        X_test=X_test,
+        y_test=y_test,
         training_time=training_time,
         model_name="LogisticRegression"
     )
@@ -50,9 +51,11 @@ def logistic_regression_model(MAX_ITER, RANDOM_STATE, N_JOBS):
         "LogisticRegression"
     )
 
+    generate_report(
+        evaluation,
+        model_name="LogisticRegression"
+    )
     Logger.success("Logistic Regression")
-
-    return results
 
 def train(MAX_ITER=1000, RANDOM_STATE=42, N_JOBS=-1):
 

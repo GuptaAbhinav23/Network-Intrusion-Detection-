@@ -6,6 +6,8 @@ from .model_saver import save_model
 
 # from .plots import *
 
+from .report_generator import generate_report
+
 from .logger import Logger
 
 from .timer import Timer

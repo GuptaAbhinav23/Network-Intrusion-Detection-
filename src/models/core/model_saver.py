@@ -1,13 +1,11 @@
 import joblib
-
-from pathlib import Path
-
+import os
 from .config import MODEL_DIR
 
 
 def save_model(model,name):
 
-    path = MODEL_DIR / f"{name}.pkl"
+    path = os.path.join(MODEL_DIR, f"{name}.pkl")
 
     joblib.dump(model,path)
 
