@@ -2,16 +2,16 @@ from .machine_learning import logistic_regression, decision_tree, random_forest,
  
 def main():
 
-    # logistic_regression.train()
-    # decision_tree.train()
-    # random_forest.train()
-    # extra_trees.train()
+    logistic_regression.train()
+    decision_tree.train()
+    random_forest.train()
+    extra_trees.train()
     adaboost.train()
     xgboost.train()
     lightgbm.train()
     catboost.train()
     linear_svm.train()
-    knn.train()
+    # knn.train()
     
     
 

@@ -9,7 +9,7 @@ from ..core import (
     Timer
 )
 
-def catboost(loss_function, iterations, learning_rate, depth, l2_leaf_reg, random_seed, thread_count, verbose):
+def catboost(loss_function, iterations, learning_rate, depth, l2_leaf_reg, random_seed, thread_count, verbose, bootstrap_type, subsample, allow_writing_files):
     Logger.title("CATBOOST")
 
     X_train, X_test, y_train, y_test = load_train_test_data()
@@ -22,7 +22,10 @@ def catboost(loss_function, iterations, learning_rate, depth, l2_leaf_reg, rando
         l2_leaf_reg=l2_leaf_reg,
         random_seed=random_seed,
         thread_count=thread_count,
-        verbose=verbose
+        verbose=verbose,
+        bootstrap_type=bootstrap_type,
+        subsample=subsample,
+        allow_writing_files=allow_writing_files
     )
 
     Logger.info("Training Model...")
@@ -59,9 +62,9 @@ def catboost(loss_function, iterations, learning_rate, depth, l2_leaf_reg, rando
     return evaluation
 
 
-def train(loss_function="MultiClass", iterations=300, learning_rate=0.1, depth=8, l2_leaf_reg=3, 
-          random_seed=42, thread_count=-1, verbose=False):
-    catboost(loss_function, iterations, learning_rate, depth, l2_leaf_reg, random_seed, thread_count, verbose)
+def train(loss_function="MultiClass", iterations=150, learning_rate=0.1, depth=5, l2_leaf_reg=3, 
+          random_seed=42, thread_count=-1, verbose=False, bootstrap_type="Bernoulli", subsample=0.2, allow_writing_files=False):
+    catboost(loss_function, iterations, learning_rate, depth, l2_leaf_reg, random_seed, thread_count, verbose, bootstrap_type, subsample, allow_writing_files)
 
 if __name__ == "__main__":
     train()

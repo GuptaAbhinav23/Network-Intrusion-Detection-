@@ -57,7 +57,7 @@ def svm(C,loss,penalty,dual,max_iter,random_state):
         "Linear SVM"
     )
 
-    evaluation["metric"]["Model Size (MB)"] = model_size
+    evaluation["metrics"]["Model Size (MB)"] = model_size
 
     generate_report(
         evaluation,
@@ -67,7 +67,7 @@ def svm(C,loss,penalty,dual,max_iter,random_state):
     return evaluation
 
 
-def train(C=1.0, loss="squared_hinge", penalty="l2", dual=False, max_iter=5000, random_state=42):
+def train(C=1.0, loss="squared_hinge", penalty="l2", dual=False, max_iter=1000, random_state=42):
     svm(C,loss,penalty,dual,max_iter,random_state)
 
 if __name__ == "__main__":

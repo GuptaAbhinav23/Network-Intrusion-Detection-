@@ -55,7 +55,7 @@ def lightgbm(objective, n_estimators, learning_rate, max_depth, num_leaves, min_
         "LightGBM"
     )
 
-    evaluation["metrics"]["Model Size (MB)"] = model
+    evaluation["metrics"]["Model Size (MB)"] = model_size
 
     generate_report(
         evaluation,

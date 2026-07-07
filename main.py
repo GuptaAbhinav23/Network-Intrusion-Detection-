@@ -4,8 +4,8 @@ from src.models.pipeline import main as model_pipeline
 
 def main():
 
-    # preprocessing()
-    # eda_pipeline()
+    preprocessing()
+    eda_pipeline()
     model_pipeline()
 
 if __name__ == "__main__":
