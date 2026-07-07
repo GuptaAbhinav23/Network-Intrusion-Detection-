@@ -107,7 +107,19 @@ def generate_report(
         metrics["Training Time (s)"],
 
         "Prediction Time":
-        metrics["Prediction Time (s)"]
+        metrics["Prediction Time (s)"],
+
+        "Throughput":
+        metrics["Throughput (samples/sec)"],
+
+        "Latency":
+        metrics["Latency (ms/sample)"],
+
+        "Memory Usage":
+        metrics["Memory Usage (MB)"],
+
+        "Model Size":
+        metrics["Model Size (MB)"]
     }
 
     comparison_df = pd.DataFrame(
@@ -127,6 +139,11 @@ def generate_report(
             [existing, comparison_df],
             ignore_index=True
         )
+
+    comparison_df = comparison_df.sort_values(
+        by="F1 Score",
+        ascending=False
+    ).reset_index(drop=True)
 
     comparison_df.to_csv(
         comparison_file,

@@ -1,0 +1,16 @@
+Metric,Value
+Model,RandomForest
+Accuracy,0.9984716724185437
+Balanced Accuracy,0.8466231630602218
+Precision,0.9983823891334244
+Recall,0.9984716724185437
+F1 Score,0.9984068954393862
+ROC AUC,0.9999410348831562
+Matthews Correlation Coefficient,0.9949158481846416
+Cohen Kappa,0.9949156747289988
+Training Time (s),2065.309761285782
+Prediction Time (s),11.294302225112915
+Throughput (samples/sec),44666.15023620519
+Latency (ms/sample),0.02238831855245556
+Memory Usage (MB),35.765625
+Model Size (MB),311.6539468765259

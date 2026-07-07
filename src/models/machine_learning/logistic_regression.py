@@ -32,7 +32,7 @@ def logistic_regression_model(MAX_ITER, RANDOM_STATE, N_JOBS):
 
     model.fit(X_train, y_train)
 
-    training_time = timer.toc()
+    training_time, memory_usage = timer.toc()
 
     Logger.success("Model Training")
 
@@ -43,19 +43,24 @@ def logistic_regression_model(MAX_ITER, RANDOM_STATE, N_JOBS):
         X_test=X_test,
         y_test=y_test,
         training_time=training_time,
+        memory_usage=memory_usage,
         model_name="LogisticRegression"
     )
 
-    save_model(
+    model_size = save_model(
         model,
         "LogisticRegression"
     )
+
+    evaluation["metrics"]["Model Size (MB)"] = model_size
 
     generate_report(
         evaluation,
         model_name="LogisticRegression"
     )
     Logger.success("Logistic Regression")
+
+    return evaluation
 
 def train(MAX_ITER=1000, RANDOM_STATE=42, N_JOBS=-1):
 

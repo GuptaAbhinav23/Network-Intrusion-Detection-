@@ -25,6 +25,7 @@ def evaluate_model(
         X_test,
         y_test,
         training_time,
+        memory_usage,
         model_name="Model"
 ):
     """
@@ -60,6 +61,18 @@ def evaluate_model(
     y_pred = model.predict(X_test)
 
     prediction_time = time.time() - prediction_start
+
+    # ------------------------------------------------------
+    # Throughput
+    # ------------------------------------------------------
+
+    throughput = len(X_test) / prediction_time if prediction_time > 0 else 0
+
+    # ------------------------------------------------------
+    # Latency
+    # ------------------------------------------------------
+
+    latency = (prediction_time * 1000) / len(X_test) if len(X_test) > 0 else 0
 
     # ------------------------------------------------------
     # Basic Metrics
@@ -128,6 +141,22 @@ def evaluate_model(
         except Exception:
 
             roc_auc = None
+    
+    elif hasattr(model, "decision_function"):
+
+        try:
+            scores = model.decision_function(X_test)
+
+            roc_auc = roc_auc_score(
+                y_test,
+                scores,
+                multi_class="ovr",
+                average="weighted"
+            )
+        except Exception:
+
+            roc_auc=None
+
 
     # ------------------------------------------------------
     # Reports
@@ -173,6 +202,12 @@ def evaluate_model(
 
         "Prediction Time (s)": prediction_time,
 
+        "Throughput (samples/sec)": throughput,
+
+        "Latency (ms/sample)": latency,
+
+        "Memory Usage (MB)": memory_usage,
+
         "Classification Report": class_report,
 
         "Confusion Matrix": confusion
@@ -196,6 +231,9 @@ def evaluate_model(
     print(f"Cohen Kappa            : {kappa:.4f}")
     print(f"Training Time (s)      : {training_time:.2f}")
     print(f"Prediction Time (s)    : {prediction_time:.2f}")
+    print(f"Throughput             : {throughput:,.2f} samples/sec")
+    print(f"Latency                : {latency:.8f} ms/sample")
+    print(f"Memory Usage (MB)      : {memory_usage:.2f}")
 
     print("\nEvaluation Completed Successfully.")
 
