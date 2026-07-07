@@ -8,9 +8,9 @@ F1 Score,0.9955615763468033
 ROC AUC,0.9996546781493701
 Matthews Correlation Coefficient,0.9862674570947476
 Cohen Kappa,0.9862555864576199
-Training Time (s),332.8391251564026
-Prediction Time (s),0.2784290313720703
-Throughput (samples/sec),1811854.8827829042
-Latency (ms/sample),0.0005519205812245061
-Memory Usage (MB),134.34375
+Training Time (s),249.10381174087524
+Prediction Time (s),0.16715312004089355
+Throughput (samples/sec),3018029.2170231827
+Latency (ms/sample),0.00033134205406611165
+Memory Usage (MB),134.51171875
 Model Size (MB),0.006194114685058594

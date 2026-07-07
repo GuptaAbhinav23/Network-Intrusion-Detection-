@@ -1,0 +1,16 @@
+Metric,Value
+Model,Linear SVM
+Accuracy,0.9926041631564029
+Balanced Accuracy,0.5616162875731896
+Precision,0.9915852389386137
+Recall,0.9926041631564029
+F1 Score,0.9917899804379448
+ROC AUC,
+Matthews Correlation Coefficient,0.9752311024195581
+Cohen Kappa,0.9751594618852732
+Training Time (s),491.21127796173096
+Prediction Time (s),0.2299518585205078
+Throughput (samples/sec),2193820.0597539833
+Latency (ms/sample),0.00045582589855256437
+Memory Usage (MB),1.59765625
+Model Size (MB),0.006068229675292969
