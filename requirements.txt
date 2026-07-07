@@ -8,16 +8,3 @@ psutil
 xgboost==3.0.2
 lightgbm
 catboost
-
-
-
-# ✅ Logistic Regression
-# ➡️ Decision Tree
-# ⬜ Random Forest
-# ⬜ Extra Trees
-# ⬜ AdaBoost
-# ⬜ XGBoost
-# ⬜ LightGBM
-# ⬜ CatBoost
-# ⬜ SVM
-# ⬜ KNN
