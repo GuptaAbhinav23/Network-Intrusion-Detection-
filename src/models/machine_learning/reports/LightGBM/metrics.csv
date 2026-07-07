@@ -1,0 +1,18 @@
+Metric,Value
+Model,LightGBM
+Accuracy,0.9533513190993373
+Balanced Accuracy,0.2674867715653592
+Precision,0.9493428634150646
+Recall,0.9533513190993373
+F1 Score,0.9512755493029759
+ROC AUC,0.9237347529031494
+Matthews Correlation Coefficient,0.8432526700059064
+Cohen Kappa,0.8431670739634054
+Training Time (s),251.48871636390686
+Prediction Time (s),5.568581581115723
+Throughput (samples/sec),90592.72862424755
+Latency (ms/sample),0.011038413514926909
+Memory Usage (MB),6.14453125
+Model Size (MB),"LGBMClassifier(colsample_bytree=0.8, n_estimators=300, n_jobs=-1, num_class=15,
+               objective='multiclass', random_state=42, subsample=0.8,
+               verbosity=-1)"
