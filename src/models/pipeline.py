@@ -1,7 +1,7 @@
-from .machine_learning import logistic_regression, decision_tree, random_forest, extra_trees, adaboost, xgboost, lightgbm, catboost, linear_svm, knn
- 
-def main():
+from .machine_learning import linear_svc, logistic_regression, decision_tree, random_forest, extra_trees, adaboost, xgboost, lightgbm, catboost, knn
 
+
+def machine_learning():
     logistic_regression.train()
     decision_tree.train()
     random_forest.train()
@@ -10,9 +10,12 @@ def main():
     xgboost.train()
     lightgbm.train()
     catboost.train()
-    linear_svm.train()
+    linear_svc.train()
     # knn.train()
-    
+
+
+def main():
+    machine_learning()
     
 
 if __name__ == "__main__":
