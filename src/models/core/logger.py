@@ -1,3 +1,4 @@
+#hello
 class Logger:
 
     @staticmethod
