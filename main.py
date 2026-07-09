@@ -1,12 +1,8 @@
-from src.preprocessing.pipeline import main as preprocessing
-from src.eda.pipeline import main as eda_pipeline
-from src.models.pipeline import main as model_pipeline
+from src.models.deep_learning.ann import train as train_ann
 
 def main():
 
-    preprocessing()
-    eda_pipeline()
-    model_pipeline()
+    train_ann()
 
 if __name__ == "__main__":
 
